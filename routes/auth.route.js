@@ -29,7 +29,7 @@ authRoute.get(
         let user = req.user;
         const token = jwt.sign({ userId: user._id }, process.env.secret, { expiresIn: '1hr' })
 
-        res.redirect(`https://localhost:8185/dashboard.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`); // chnge the link to frontend
+        res.redirect(`http://localhost:8185/dashboard.html?id=${user._id}&token=${token}&role=${user.role}&approved=${user.approved}&username=${user.name}`); // chnge the link to frontend
     }
 );
 
@@ -42,7 +42,7 @@ passport.use(
         {
             clientID: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            callbackURL: "https://localhost:8185/auth/google/callback", // change the callback link
+            callbackURL: "http://localhost:8185/auth/google/callback", // change the callback link
             passReqToCallback: true
         },
         async function (request, accessToken, refreshToken, profile, cb) {
