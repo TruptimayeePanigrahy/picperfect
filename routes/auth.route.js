@@ -34,7 +34,7 @@ authRoute.get(
 );
 
 authRoute.get("/google/failure", (req, res) => {
-    res.redirect("https://pic-frontend.netlify.app/login.html")
+    res.redirect("https://pic-frontend.netlify.app/HTML/login.html")
 })
 
 passport.use(
